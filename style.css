@@ -1,0 +1,39 @@
+.main-container-style {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 350px;
+    height: 400px;
+    background-color: yellow;
+    padding: 5px;
+}
+
+.results-container-style {
+    width: 100%;
+    height: 75px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.button-row-style {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.button-style {
+    height: 30px;
+    width: 10px;
+    flex-grow: 1;
+    margin: 1px;
+}
+
+.button-style-double {
+    height: 30px;
+    flex-grow: 3;
+    margin: 1px;
+}
