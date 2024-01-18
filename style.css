@@ -37,3 +37,13 @@
     flex-grow: 3;
     margin: 1px;
 }
+
+.button-style:hover {
+    background-color: #00f832;
+    cursor: pointer;
+}
+
+.button-style-double:hover {
+    background-color: #00f832;
+    cursor: pointer;
+}
