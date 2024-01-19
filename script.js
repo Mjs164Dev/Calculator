@@ -43,9 +43,22 @@ document.querySelector('#button-ac').addEventListener("click", function() {
 });
 
 document.querySelector('#button-equal').addEventListener("click", function() {
+    
+    console.log(`firstNumber = ${firstNumber}`);
+    console.log(`operator = ${operator}`);
+    console.log(`secondNumber = ${secondNumber}`);
+    console.log(`answer = ${answer}`);
+    console.log(`displayText = ${displayText}`);
+
     switch (operator) {
         case "+":
             answer = Number(firstNumber) + Number(secondNumber);
+        case "-":
+            answer = Number(firstNumber) - Number(secondNumber);
+        case "*":
+            answer = Number(firstNumber) * Number(secondNumber);
+        case "/":
+            answer = Number(firstNumber) / Number(secondNumber);
     }
     
     resultsContainer.textContent = answer;
