@@ -25,7 +25,7 @@
     justify-content: space-around;
 }
 
-.number-button, .function-button{
+.number-button, .operator-button, .clear-button{
     height: 30px;
     width: 10px;
     flex-grow: 1;
