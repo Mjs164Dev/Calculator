@@ -1,3 +1,6 @@
+mainContainer = document.querySelector('#main-container');
+resultsContainer = document.querySelector('#results-container');
+
 let displayText = "";
 
 mainContainer.addEventListener("click", function(event) {
