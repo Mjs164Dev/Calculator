@@ -20,49 +20,71 @@ const btnEqual = document.querySelector('#button-equal');
 
 let displayText = "";
 
-btnOne.addEventListener("click", function() {
-    displayText += 1; //add 1 as the next number to the display
+// Add a common class to all your buttons, e.g., 'calc-button'
+mainContainer.addEventListener("click", function(event) {
+    // Check if the clicked element has the 'calc-button' class
+    if(event.target.classList.contains('number-button')) {
+        const value = event.target.textContent; // or get some attribute that holds the value
+        displayText += value;
+        resultsContainer.textContent = displayText;
+    }
+});
+
+// Reset the display text on AC button click
+document.querySelector('#button-ac').addEventListener("click", function() {
+    displayText = '';
     resultsContainer.textContent = displayText;
 });
 
-btnOne.addEventListener("click", function() {
-    displayText += 1; //add 1 as the next number to the display
-    resultsContainer.textContent = displayText;
-});
 
-btnTwo.addEventListener("click", function() {
-    displayText += 2; //add 2 as the next number to the display
-    resultsContainer.textContent = displayText;
-});
+// btnOne.addEventListener("click", function() {
+//     displayText += 1; //add 1 as the next number to the display
+//     resultsContainer.textContent = displayText;
+// });
 
-btnThree.addEventListener("click", function() {
-    displayText += 3; //add 3 as the next number to the display
-    resultsContainer.textContent = displayText;});
+// btnTwo.addEventListener("click", function() {
+//     displayText += 2; //add 2 as the next number to the display
+//     resultsContainer.textContent = displayText;
+// });
 
-btnFour.addEventListener("click", function() {
-    displayText += 4; //add 4 as the next number to the display
-    resultsContainer.textContent = displayText;});
+// btnThree.addEventListener("click", function() {
+//     displayText += 3; //add 3 as the next number to the display
+//     resultsContainer.textContent = displayText;});
 
-btnFive.addEventListener("click", function() {
-    displayText += 5; //add 5 as the next number to the display
-    resultsContainer.textContent = displayText;});
+// btnFour.addEventListener("click", function() {
+//     displayText += 4; //add 4 as the next number to the display
+//     resultsContainer.textContent = displayText;});
 
-btnSix.addEventListener("click", function() {
-    displayText += 6; //add 6 as the next number to the display
-    resultsContainer.textContent = displayText;});
+// btnFive.addEventListener("click", function() {
+//     displayText += 5; //add 5 as the next number to the display
+//     resultsContainer.textContent = displayText;});
 
-btnSeven.addEventListener("click", function() {
-    displayText += 7; //add 7 as the next number to the display
-    resultsContainer.textContent = displayText;});
+// btnSix.addEventListener("click", function() {
+//     displayText += 6; //add 6 as the next number to the display
+//     resultsContainer.textContent = displayText;});
 
-btnEight.addEventListener("click", function() {
-    displayText += 8; //add 8 as the next number to the display
-    resultsContainer.textContent = displayText;});
+// btnSeven.addEventListener("click", function() {
+//     displayText += 7; //add 7 as the next number to the display
+//     resultsContainer.textContent = displayText;});
 
-btnNine.addEventListener("click", function() {
-    displayText += 9; //add 9 as the next number to the display
-    resultsContainer.textContent = displayText;});
+// btnEight.addEventListener("click", function() {
+//     displayText += 8; //add 8 as the next number to the display
+//     resultsContainer.textContent = displayText;});
 
-btnAC.addEventListener("click", function() {
-    resultsContainer.textContent = '';
-});
+// btnNine.addEventListener("click", function() {
+//     displayText += 9; //add 9 as the next number to the display
+//     resultsContainer.textContent = displayText;});
+
+// btnZero.addEventListener("click", function() {
+//     displayText += 0; //add 0 as the next number to the display
+//     resultsContainer.textContent = displayText;});   
+
+// btnDecimal.addEventListener("click", function() {
+//     displayText += '.'; //add . as the next number to the display
+//     resultsContainer.textContent = displayText;});    
+
+// btnAC.addEventListener("click", function() {
+//     displayText = '';
+//     resultsContainer.textContent = displayText;
+// });
+

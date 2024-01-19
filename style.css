@@ -25,25 +25,14 @@
     justify-content: space-around;
 }
 
-.button-style {
+.number-button, .function-button{
     height: 30px;
     width: 10px;
     flex-grow: 1;
     margin: 1px;
 }
 
-.button-style-double {
-    height: 30px;
-    flex-grow: 3;
-    margin: 1px;
-}
-
-.button-style:hover {
-    background-color: #00f832;
-    cursor: pointer;
-}
-
-.button-style-double:hover {
+.number-button:hover {
     background-color: #00f832;
     cursor: pointer;
 }
