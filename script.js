@@ -5,6 +5,7 @@ let displayText = "";
 let firstNumber = "";
 let operator = "";
 let secondNumber = "";
+let answer = "";
 
 mainContainer.addEventListener("click", function(event) {
     // Check if the clicked element has the 'num-button' class
@@ -13,13 +14,11 @@ mainContainer.addEventListener("click", function(event) {
         if(operator === "") {
             const btnValue = event.target.textContent;
             firstNumber += btnValue;
-            displayText = firstNumber;
             resultsContainer.textContent = firstNumber;
         }
         else {
             const btnValue = event.target.textContent;
             secondNumber += btnValue;
-            displayText = secondNumber;
             resultsContainer.textContent = secondNumber;
         }
     }
@@ -28,18 +27,33 @@ mainContainer.addEventListener("click", function(event) {
         operator = btnValue;
         displayText = "";
         resultsContainer.textContent = displayText;
-        console.log(operator);
     }
 });
 
 // Reset the display text on AC button click
 document.querySelector('#button-ac').addEventListener("click", function() {
-    console.log(firstNumber);
-    console.log(operator);
-    console.log(secondNumber);
     displayText = "";
     firstNumber = "";
     operator = "";
     secondNumber = "";
     resultsContainer.textContent = displayText;
+    console.log(`firstnumber =  ${firstNumber}`);
+    console.log(`operator =  ${operator}`);
+    console.log(`secondNumber = ${secondNumber}`);
+});
+
+document.querySelector('#button-equal').addEventListener("click", function() {
+    switch (operator) {
+        case "+":
+            answer = Number(firstNumber) + Number(secondNumber);
+    }
+    
+    resultsContainer.textContent = answer;
+
+    console.log(`firstNumber = ${firstNumber}`);
+    console.log(`operator = ${operator}`);
+    console.log(`secondNumber = ${secondNumber}`);
+    console.log(`answer = ${answer}`);
+    console.log(`displayText = ${displayText}`);
+
 });
