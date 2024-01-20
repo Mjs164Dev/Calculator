@@ -36,37 +36,29 @@ document.querySelector('#button-ac').addEventListener("click", function() {
     firstNumber = "";
     operator = "";
     secondNumber = "";
-    resultsContainer.textContent = displayText;
-    console.log(`firstnumber =  ${firstNumber}`);
-    console.log(`operator =  ${operator}`);
-    console.log(`secondNumber = ${secondNumber}`);
 });
 
 document.querySelector('#button-equal').addEventListener("click", function() {
-    
-    console.log(`firstNumber = ${firstNumber}`);
-    console.log(`operator = ${operator}`);
-    console.log(`secondNumber = ${secondNumber}`);
-    console.log(`answer = ${answer}`);
-    console.log(`displayText = ${displayText}`);
 
     switch (operator) {
         case "+":
             answer = Number(firstNumber) + Number(secondNumber);
+            console.log('addition!');
+            break;
         case "-":
             answer = Number(firstNumber) - Number(secondNumber);
+            console.log('subtraction!');
+            break;
         case "*":
             answer = Number(firstNumber) * Number(secondNumber);
+            console.log('multiplication!');
+            break;
         case "/":
             answer = Number(firstNumber) / Number(secondNumber);
+            console.log('division!');
+            break;
     }
     
     resultsContainer.textContent = answer;
-
-    console.log(`firstNumber = ${firstNumber}`);
-    console.log(`operator = ${operator}`);
-    console.log(`secondNumber = ${secondNumber}`);
-    console.log(`answer = ${answer}`);
-    console.log(`displayText = ${displayText}`);
 
 });
