@@ -30,17 +30,8 @@ mainContainer.addEventListener("click", function(event) {
     }
 });
 
-// Reset the display text on AC button click
-document.querySelector('#button-ac').addEventListener("click", function() {
-    displayText = "";
-    firstNumber = "";
-    operator = "";
-    secondNumber = "";
-    resultsContainer.textContent = displayText;
-});
-
-document.querySelector('#button-equal').addEventListener("click", function() {
-
+// Use firstNumber, secondNumber, and the operator to calculate the answer
+function operate(firstNumber, secondNumber, operator) {
     switch (operator) {
         case "+":
             answer = Number(firstNumber) + Number(secondNumber);
@@ -59,7 +50,22 @@ document.querySelector('#button-equal').addEventListener("click", function() {
             console.log('division!');
             break;
     }
-    
     resultsContainer.textContent = answer;
+};
 
+
+// Reset the display text on AC button click
+document.querySelector('#button-ac').addEventListener("click", function() {
+    displayText = "";
+    firstNumber = "";
+    operator = "";
+    secondNumber = "";
+    resultsContainer.textContent = displayText;
+});
+
+document.querySelector('#button-equal').addEventListener("click", function() {
+    operate(firstNumber, secondNumber, operator);
+    firstNumber = answer;
+    operator = "";
+    secondNumber = "";
 });
