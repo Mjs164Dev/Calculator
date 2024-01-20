@@ -6,6 +6,31 @@ let firstNumber = "";
 let operator = "";
 let secondNumber = "";
 let answer = "";
+let enteredValue = "";
+let numberList = [];
+
+// mainContainer.addEventListener("click", function(event) {
+//     // Check if the clicked element has the 'num-button' class
+//     if(event.target.classList.contains('number-button')) {   
+//         // Check to see if an operator has been selected
+//         if(operator === "") {
+//             const btnValue = event.target.textContent;
+//             firstNumber += btnValue;
+//             resultsContainer.textContent = firstNumber;
+//         }
+//         else {
+//             const btnValue = event.target.textContent;
+//             secondNumber += btnValue;
+//             resultsContainer.textContent = secondNumber;
+//         }
+//     }
+//     else if (event.target.classList.contains('operator-button')) {
+//         const btnValue = event.target.textContent;
+//         operator = btnValue;
+//         displayText = "";
+//         resultsContainer.textContent = displayText;
+//     }
+// });
 
 mainContainer.addEventListener("click", function(event) {
     // Check if the clicked element has the 'num-button' class
@@ -64,6 +89,9 @@ document.querySelector('#button-ac').addEventListener("click", function() {
 });
 
 document.querySelector('#button-equal').addEventListener("click", function() {
+    console.log(firstNumber);
+    console.log(operator);
+    console.log(secondNumber);
     operate(firstNumber, secondNumber, operator);
     firstNumber = answer;
     operator = "";
