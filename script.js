@@ -36,6 +36,7 @@ document.querySelector('#button-ac').addEventListener("click", function() {
     firstNumber = "";
     operator = "";
     secondNumber = "";
+    resultsContainer.textContent = displayText;
 });
 
 document.querySelector('#button-equal').addEventListener("click", function() {
