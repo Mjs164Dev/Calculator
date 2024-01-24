@@ -19,16 +19,20 @@ mainContainer.addEventListener("click", function(event) {
         if(operator === "") {
             const btnValue = event.target.textContent;
             firstNumber += btnValue;
-            firstNumber = Number(firstNumber);
             resultsContainer.textContent = firstNumber;
             console.log("firstNumber: ", firstNumber);
+            if (btnValue == ".") {
+                document.querySelector('#button-decimal').disabled = true;
+            }
         }
         else {
             const btnValue = event.target.textContent;
             secondNumber += btnValue;
-            secondNumber = Number(secondNumber);
             resultsContainer.textContent = secondNumber;
             console.log("secondNumber: ", secondNumber);
+            if (btnValue == ".") {
+                document.querySelector('#button-decimal').disabled = true;
+            }
         }
     }
     else if (event.target.classList.contains('operator-button')) {
@@ -49,6 +53,7 @@ mainContainer.addEventListener("click", function(event) {
             displayText = "";
             resultsContainer.textContent = displayText;
         }
+        document.querySelector('#button-decimal').disabled = false;
     }
 });
 
@@ -85,6 +90,7 @@ function clearVariables() {
     secondNumber = "";
     answer = "";
     resultsContainer.textContent = displayText;
+    document.querySelector('#button-decimal').disabled = false;
 }
 
 // Reset the display text on AC button click
@@ -94,6 +100,7 @@ document.querySelector('#button-ac').addEventListener("click", function() {
 
 document.querySelector('#button-equal').addEventListener("click", function() {
     operate(firstNumber, secondNumber, operator);
+    document.querySelector('#button-decimal').disabled = false;
     console.log("answer: ", answer);
     console.log(firstNumber, operator, secondNumber, "=",answer);
 });
