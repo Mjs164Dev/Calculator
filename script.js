@@ -19,7 +19,7 @@ mainContainer.addEventListener("click", function(event) {
         if(operator === "") {
             const btnValue = event.target.textContent;
             firstNumber += btnValue;
-            firstNumber = Number(firstNumber);
+            //firstNumber = Number(firstNumber);
             resultsContainer.textContent = firstNumber;
             console.log("firstNumber: ", firstNumber);
         }
@@ -52,34 +52,43 @@ mainContainer.addEventListener("click", function(event) {
     }
 });
 
-
 // Use firstNumber, secondNumber, and the operator to calculate the answer
 function operate(firstNumber, secondNumber, operator) {
-    switch (operator) {
-        case "+":
-            answer = Number(firstNumber) + Number(secondNumber);
-            break;
-        case "-":
-            answer = Number(firstNumber) - Number(secondNumber);
-            break;
-        case "*":
-            answer = Number(firstNumber) * Number(secondNumber);
-            break;
-        case "/":
-            answer = Number(firstNumber) / Number(secondNumber);
-            break;
+
+    if (secondNumber == 0 && operator == "/") {
+        alert("Can't divide by 0! Start over.");
+        clearVariables();
     }
-    resultsContainer.textContent = answer;
+    else {
+        switch (operator) {
+            case "+":
+                answer = Number(firstNumber) + Number(secondNumber);
+                break;
+            case "-":
+                answer = Number(firstNumber) - Number(secondNumber);
+                break;
+            case "*":
+                answer = Number(firstNumber) * Number(secondNumber);
+                break;
+            case "/":
+                answer = Number(firstNumber) / Number(secondNumber);
+                break;
+        }
+        resultsContainer.textContent = answer;
+    }
 };
 
-
-// Reset the display text on AC button click
-document.querySelector('#button-ac').addEventListener("click", function() {
+function clearVariables() {
     displayText = "";
     firstNumber = "";
     operator = "";
     secondNumber = "";
     resultsContainer.textContent = displayText;
+}
+
+// Reset the display text on AC button click
+document.querySelector('#button-ac').addEventListener("click", function() {
+    clearVariables();
 });
 
 document.querySelector('#button-equal').addEventListener("click", function() {
