@@ -7,12 +7,10 @@ let operator = "";
 let secondNumber = "";
 let answer = "";
 
-//Check values of firstNumber (F), operator (O), and secondNumber (S)
-//if all are blank -> entering firstNumber
-//if F has value -> still entering first number
-//if F & O have value, entering second number
-//if all have value, call compute function and set answer to first number, then reset O & S values
 
+//if number button is being selected, either firstNumber or secondNumber is being entered
+//  firstNumber is being entered if operator == "", else secondNumber is being entered
+//if operator button is being selected and answer != "", firstNumber = answer.
 
 mainContainer.addEventListener("click", function(event) {
     // Check if the clicked element has the 'number-button' class
@@ -21,19 +19,36 @@ mainContainer.addEventListener("click", function(event) {
         if(operator === "") {
             const btnValue = event.target.textContent;
             firstNumber += btnValue;
+            firstNumber = Number(firstNumber);
             resultsContainer.textContent = firstNumber;
+            console.log("firstNumber: ", firstNumber);
         }
         else {
             const btnValue = event.target.textContent;
             secondNumber += btnValue;
+            secondNumber = Number(secondNumber);
             resultsContainer.textContent = secondNumber;
+            console.log("secondNumber: ", secondNumber);
         }
     }
     else if (event.target.classList.contains('operator-button')) {
-        const btnValue = event.target.textContent;
-        operator = btnValue;
-        displayText = "";
-        resultsContainer.textContent = displayText;
+        
+        if (firstNumber.length != 0 && secondNumber.length != 0 && operator.length != 0) {
+            operate(firstNumber,secondNumber,operator);
+            console.log(answer);
+            firstNumber = answer;
+            secondNumber = "";
+            const btnValue = event.target.textContent;
+            operator = btnValue;
+            console.log("operator: ", operator);
+        }
+        else {
+            const btnValue = event.target.textContent;
+            operator = btnValue;
+            console.log("operator: ", operator);
+            displayText = "";
+            resultsContainer.textContent = displayText;
+        }
     }
 });
 
@@ -68,12 +83,7 @@ document.querySelector('#button-ac').addEventListener("click", function() {
 });
 
 document.querySelector('#button-equal').addEventListener("click", function() {
-    console.log(firstNumber);
-    console.log(operator);
-    console.log(secondNumber);
     operate(firstNumber, secondNumber, operator);
-    console.log(answer);
-    firstNumber = answer;
-    operator = "";
-    secondNumber = "";
+    console.log("answer: ", answer);
+    console.log(firstNumber, operator, secondNumber, "=",answer);
 });
