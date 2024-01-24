@@ -19,7 +19,7 @@ mainContainer.addEventListener("click", function(event) {
         if(operator === "") {
             const btnValue = event.target.textContent;
             firstNumber += btnValue;
-            //firstNumber = Number(firstNumber);
+            firstNumber = Number(firstNumber);
             resultsContainer.textContent = firstNumber;
             console.log("firstNumber: ", firstNumber);
         }
@@ -83,6 +83,7 @@ function clearVariables() {
     firstNumber = "";
     operator = "";
     secondNumber = "";
+    answer = "";
     resultsContainer.textContent = displayText;
 }
 
