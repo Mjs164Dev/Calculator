@@ -28,8 +28,17 @@
     justify-content: space-around;
 }
 
-.number-button, .operator-button, .clear-button, .equal-button{
+.number-button{
     height: 30px;
+    width: 10px;
+    flex-grow: 1;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+.operator-button, .clear-button, .equal-button{
+    height: 30px;
+    background-color: #ffedca;
     width: 10px;
     flex-grow: 1;
     margin: 1px;
